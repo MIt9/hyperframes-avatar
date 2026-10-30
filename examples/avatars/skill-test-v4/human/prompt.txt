@@ -1,0 +1,9 @@
+Use case: stylized-concept. Asset: character model sheet for animation.
+Character: human; young adult woman, relaxed neutral expression; curly auburn hair; plain GREEN sweater; rounded cartoon head, natural torso, both arms down and relaxed.
+Style: smooth 2D cartoon; flat solid #FF00FF background, no shadow, no gradient, no floor; flat colors with gentle cel shading.
+Palette: ink=#302326, skin=#E6B594, hair=#934528, sweater=#368A51, teeth=#FFF9EE, tongue=#D88489.
+Framing: [1024, 1024]; background #FF00FF.
+Poses: idle. Keep consistent proportions, separate figures and complete species-appropriate extremities.
+Invariants: curly auburn hair; green sweater; front facing, open eyes looking at viewer; neutral pose, arms down, no demonstration gesture.
+Avoid: pixel art; photorealism; 3D; text; logos; raised arms; open palms; cropped hands; gradient background; floor shadows. No labels or watermarks.
+This is reference art; do not claim the result is an aligned transparent layer pack.

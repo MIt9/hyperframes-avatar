@@ -1,0 +1,19 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "title":"Runtime-compatible sprite layer pack",
+  "type":"object","additionalProperties":false,"required":["id","gridSize","layers"],
+  "properties":{
+    "id":{"type":"string","pattern":"^[a-z][a-z0-9-]{0,63}$"},
+    "gridSize":{"type":"array","minItems":2,"maxItems":2,"items":{"type":"integer","minimum":1,"maximum":4096}},
+    "layers":{
+      "type":"object","additionalProperties":false,"required":["base","eyes","mouth","poses"],
+      "properties":{
+        "base":{"$ref":"#/$defs/path"},
+        "eyes":{"type":"object","additionalProperties":false,"required":["open","blink"],"properties":{"open":{"$ref":"#/$defs/path"},"blink":{"$ref":"#/$defs/path"},"surprised":{"$ref":"#/$defs/path"}}},
+        "mouth":{"type":"object","additionalProperties":false,"required":["closed","half","open"],"properties":{"closed":{"$ref":"#/$defs/path"},"half":{"$ref":"#/$defs/path"},"open":{"$ref":"#/$defs/path"},"smile":{"$ref":"#/$defs/path"}}},
+        "poses":{"type":"object","required":["idle"],"additionalProperties":{"$ref":"#/$defs/path"}}
+      }
+    }
+  },
+  "$defs":{"path":{"type":"string","minLength":1}}
+}

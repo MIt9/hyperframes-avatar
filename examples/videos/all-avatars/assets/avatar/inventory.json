@@ -1,0 +1,69 @@
+{
+  "duration": 38.666666666666664,
+  "fps": 30,
+  "characters": [
+    {
+      "id": "pixel-presenter",
+      "mode": "layered-sprite",
+      "lipSync": "RMS",
+      "bounce": true,
+      "source": "demo/pack.js"
+    },
+    {
+      "id": "skill-test-woman",
+      "mode": "talking-portrait",
+      "lipSync": "RMS",
+      "bounce": false,
+      "idle": "natural-relaxed",
+      "source": "avatars/skill-test-v4/human/portrait.json",
+      "base": "assets/avatar/woman-mouthless.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "width": 544,
+      "position": {
+        "x": 0,
+        "y": 80
+      }
+    },
+    {
+      "id": "skill-test-cat",
+      "mode": "talking-portrait",
+      "lipSync": "RMS",
+      "bounce": false,
+      "idle": "natural-calm",
+      "secondaryMotion": "tail-sway",
+      "source": "avatars/skill-test-v4/cat/portrait.json",
+      "base": "assets/avatar/tuxedo-cat-mouthless.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "width": 544,
+      "position": {
+        "x": 0,
+        "y": 80
+      },
+      "layers": [
+        {
+          "id": "tail",
+          "src": "assets/avatar/tuxedo-cat-tail.png",
+          "placement": "behind",
+          "origin": [
+            500,
+            1130
+          ],
+          "motion": {
+            "type": "sway",
+            "amplitude": 7.5,
+            "period": 1.8,
+            "cycle": 5.4,
+            "active": 3.6
+          }
+        }
+      ]
+    }
+  ],
+  "note": "All three actors share the original recording and RMS lip-sync. Skill-built woman and tuxedo cat use unchanged mouthless PNGs, blinking and body beats without bounce; the cat tail sways behind its body."
+}

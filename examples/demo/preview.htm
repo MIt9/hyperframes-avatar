@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="uk">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SpriteAvatar — перевірка кадрів</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; padding: 32px; background: #161a24; color: #edece6; font: 16px system-ui, sans-serif; }
+  main { max-width: 1000px; margin: auto; }
+  h1 { margin: 0 0 12px; font-size: 28px; }
+  p { color: #bec4d4; line-height: 1.5; }
+  #stage { position: relative; height: 480px; overflow: hidden; border: 1px solid #485064; background: #2c3445; }
+  #stage::before { content: ''; position: absolute; inset: 0; opacity: .2; background-image: linear-gradient(45deg,#8490aa 25%,transparent 25%),linear-gradient(-45deg,#8490aa 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#8490aa 75%),linear-gradient(-45deg,transparent 75%,#8490aa 75%); background-size: 32px 32px; background-position: 0 0,0 16px,16px -16px,-16px 0; }
+  label { display: block; margin-top: 24px; }
+  input { width: 100%; margin: 16px 0; }
+  output { font-variant-numeric: tabular-nums; }
+  pre { padding: 16px; border: 1px solid #485064; overflow: auto; }
+  @media(max-width: 520px) { body { padding: 16px; } #stage { height: 440px; } }
+</style>
+<main>
+  <h1>SpriteAvatar</h1>
+  <p>Перемотай кадр у будь-який бік. Пози, рот і кліпання залежать від часу. Тестовий пак і синтетична амплітуда демонструють роботу компонента.</p>
+  <div id="stage" aria-label="Попередній перегляд аватара"></div>
+  <label for="time">Час кадру: <output id="clock">0.00 с</output></label>
+  <input id="time" type="range" min="0" max="18" step="0.0166666667" value="0">
+  <pre id="state" aria-label="Стан поточного кадру"></pre>
+  <p id="status" role="status">Завантаження шарів…</p>
+</main>
+<script type="module">
+  import { createSpriteAvatar } from '../../src/index.js';
+  import { demoProps } from '../../assets/avatar/demo-pack.js';
+  const avatar = createSpriteAvatar(demoProps);
+  document.querySelector('#stage').append(avatar.element);
+  const input = document.querySelector('#time');
+  function show() {
+    const time = Number(input.value);
+    document.querySelector('#clock').textContent = `${time.toFixed(2)} с`;
+    document.querySelector('#state').textContent = JSON.stringify(avatar.renderAt(time), null, 2);
+  }
+  input.addEventListener('input', show);
+  show();
+  try { await avatar.ready; document.querySelector('#status').textContent = 'Усі шари завантажені.'; }
+  catch(error) { document.querySelector('#status').textContent = `Помилка асетів: ${error.message}`; }
+</script>
+</html>

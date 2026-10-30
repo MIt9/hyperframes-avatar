@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="uk" data-composition-variables='[
+  {"id":"pack","type":"enum","label":"Персонаж","default":"pixel-presenter","options":[{"value":"pixel-presenter","label":"Pixel presenter"}]},
+  {"id":"animation","type":"enum","label":"Анімація","default":"demo","options":[{"value":"demo","label":"Демо жестів"},{"value":"idle","label":"Очікування"}]},
+  {"id":"scale","type":"number","label":"Масштаб","default":7,"min":1,"max":12,"step":1},
+  {"id":"position","type":"enum","label":"Позиція","default":"bottom-right","options":[{"value":"bottom-right","label":"Праворуч унизу"},{"value":"bottom-left","label":"Ліворуч унизу"},{"value":"custom","label":"Координати"}]},
+  {"id":"x","type":"number","label":"X","default":0,"unit":"px"},
+  {"id":"y","type":"number","label":"Y","default":0,"unit":"px"},
+  {"id":"outlineWidth","type":"number","label":"Товщина обводки","default":8,"min":0,"max":32,"unit":"px"},
+  {"id":"outlineColor","type":"color","label":"Колір обводки","default":"#F8F6F0"},
+  {"id":"shadowBlur","type":"number","label":"Розмиття тіні","default":20,"min":0,"max":64,"unit":"px"},
+  {"id":"shadowOpacity","type":"number","label":"Непрозорість тіні","default":0.35,"min":0,"max":1,"step":0.05},
+  {"id":"label","type":"string","label":"Доступна назва","default":"Аватар ведучого"}
+]'>
+<template>
+  <style>#root { position: absolute; inset: 0; }</style>
+  <div id="root" data-composition-id="sprite-avatar-left" data-start="0" data-duration="18" data-width="1920" data-height="1080" data-layout-allow-overflow></div>
+  <script>
+    // Capture scope before asynchronous imports: HyperFrames scopes this document.
+    const avatarRoot = document.querySelector('#root');
+    const avatarScope = avatarRoot.closest('[data-composition-id]');
+    const avatarId = avatarScope.getAttribute('data-composition-id');
+    const avatarVariables = window.__hyperframes.getVariables();
+    const avatarBuild = Promise.all([
+      import('./src/hyperframes.js'),
+      import('./assets/avatar/catalog.js'),
+    ]).then(async ([{ mountHyperframesAvatar, avatarPropsFromVariables }, { catalog }]) => {
+      const component = mountHyperframesAvatar(avatarRoot, avatarPropsFromVariables(avatarVariables, catalog), {
+        compositionId: avatarId, duration: 18, target: window, gsap,
+      });
+      await component.ready;
+      window.__timelines = window.__timelines || {};
+      window.__timelines['sprite-avatar-left'] = component.timeline;
+      return component;
+    });
+    window.__hf = window.__hf || {};
+    window.__hf.buildReady = window.__hf.buildReady || {};
+    window.__hf.buildReady[`${avatarId}:module`] = avatarBuild;
+  </script>
+</template>
+</html>

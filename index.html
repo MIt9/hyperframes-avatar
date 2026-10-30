@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="uk">
+<head><meta charset="utf-8"><title>SpriteAvatar HyperFrames example</title></head>
+<body style="margin:0">
+  <div data-hf-id="hf-sdca" id="root" data-composition-id="main" data-start="0" data-duration="18" data-width="1920" data-height="1080" style="position:relative;width:1920px;height:1080px">
+    <div data-hf-id="hf-nccy" id="background" class="clip" style="position:absolute;inset:0;background:#2c3445" data-start="0" data-duration="18" data-track-index="0"></div>
+    <div data-hf-id="hf-mkwd" id="sprite-avatar" class="clip" data-composition-id="sprite-avatar" data-composition-src="compositions/sprite-avatar.html" data-start="0" data-duration="18" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080" data-variable-values='{"scale":7,"position":"bottom-right"}'></div>
+    <div id="sprite-avatar-left" class="clip" data-composition-id="sprite-avatar-left" data-composition-src="compositions/sprite-avatar-left.html" data-start="2" data-duration="14" data-track-index="2" data-track-kind="graphics" data-width="1920" data-height="1080" data-variable-values='{"scale":4,"position":"bottom-left","outlineColor":"#F5DE99","outlineWidth":5,"label":"Другий ведучий"}'></div>
+  </div>
+  <script src="node_modules/gsap/dist/gsap.min.js"></script>
+  <script>
+    const timeline = gsap.timeline({ paused: true });
+    timeline.to({}, { duration: 18 });
+    window.__timelines = window.__timelines || {};
+    window.__timelines.main = timeline;
+  </script>
+</body>
+</html>

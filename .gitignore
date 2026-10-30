@@ -1,0 +1,7 @@
+node_modules/
+.hyperframes/
+.thumbnails/
+.DS_Store
+__pycache__/
+*.mp4
+!examples/videos/voice-test/renders/avatar-en-uk.mp4

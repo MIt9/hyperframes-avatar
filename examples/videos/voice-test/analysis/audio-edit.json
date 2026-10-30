@@ -1,0 +1,10 @@
+{
+  "source": "assets/audio/original.mp3",
+  "trimStart": 3.3,
+  "audioDuration": 38.65,
+  "fps": 30,
+  "videoDuration": 38.666666666666664,
+  "normalization": "loudnorm I=-16 TP=-1.5 LRA=11",
+  "englishSourceOffset": 0,
+  "ukrainianSourceOffset": 19.8
+}

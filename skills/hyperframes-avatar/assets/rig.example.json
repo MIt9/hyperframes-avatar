@@ -1,0 +1,79 @@
+{
+  "$schema": "rig.schema.json",
+  "version": 1,
+  "characterId": "presenter-v2",
+  "status": "planning",
+  "coordinateSystem": "normalized-canvas",
+  "origin": "top-left",
+  "layerOrder": [
+    "back-arm",
+    "torso",
+    "head",
+    "eyes",
+    "brows",
+    "mouth",
+    "front-arm"
+  ],
+  "anchors": {
+    "headPivot": [
+      0.5,
+      0.48
+    ],
+    "leftShoulder": [
+      0.32,
+      0.56
+    ],
+    "rightShoulder": [
+      0.68,
+      0.56
+    ],
+    "torsoPivot": [
+      0.5,
+      0.88
+    ],
+    "eyesCenter": [
+      0.5,
+      0.28
+    ],
+    "mouthCenter": [
+      0.5,
+      0.39
+    ]
+  },
+  "plannedChannels": {
+    "headTiltDeg": [
+      -8,
+      8
+    ],
+    "gazeX": [
+      -0.04,
+      0.04
+    ],
+    "gazeY": [
+      -0.025,
+      0.025
+    ],
+    "browLift": [
+      0,
+      0.025
+    ],
+    "shoulderLift": [
+      0,
+      0.03
+    ]
+  },
+  "motionProfile": {
+    "breathAmplitude": 0.008,
+    "breathPeriod": 3.2,
+    "swayDegrees": 1.2,
+    "swayPeriod": 4.5,
+    "gestureLeanDegrees": 3,
+    "poseTransition": 0.12
+  },
+  "limits": {
+    "maximumGestureRate": 2,
+    "minimumPoseHold": 0.5,
+    "maximumBodyRotationDeg": 5
+  },
+  "notes": "Anchors and plannedChannels are art-preparation targets, not a completed rig. Re-measure against final aligned transparent layer assets. motionProfile can be passed to the current whole-body renderer explicitly; this JSON is not loaded automatically. Independent head, brows and pupils are not implemented by the current renderer."
+}

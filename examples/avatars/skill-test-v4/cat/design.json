@@ -1,0 +1,9 @@
+{
+  "version":1,"id":"cat","status":"concept",
+  "identity":{"kind":"cat","presentation":"black-and-white tuxedo cat, natural neutral sitting pose","features":["black fur with white muzzle, chest and paws","two upright ears","tail clearly visible beside body","open amber eyes looking at viewer"],"silhouette":"natural seated feline with resting front paws and clearly visible curved tail","invariants":["same tuxedo markings","natural feline anatomy","relaxed paws on ground","tail visible, never hidden behind body"]},
+  "render":{"style":"smooth 2D cartoon; flat solid #00FF00 background, no shadow, no gradient, no floor","shading":"flat colors with gentle cel shading","outlinePx":3,"referenceCanvas":[1024,1024],"background":"#00FF00"},
+  "palette":{"ink":"#242127","furBlack":"#29282E","furWhite":"#F5F1E8","nose":"#C57E88","eyes":"#DFAE42","teeth":"#FFF9EE","tongue":"#D88489"},
+  "proportions":{"headToVisibleHeight":0.38,"eyeSeparationToHeadWidth":0.4,"pawToHeadWidth":0.22,"minimumSilhouettePadding":0.1},
+  "expressionSet":["neutral"],"poseSet":["idle"],
+  "avoid":["human clothing","human hands","raised paw","gesture","pixel art","photorealism","3D","text","logos","gradient background","floor shadows"]
+}

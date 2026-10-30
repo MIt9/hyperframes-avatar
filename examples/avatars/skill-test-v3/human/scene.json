@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "characterId": "skill-test-human",
+  "duration": 6,
+  "motionPreset": "off",
+  "commands": [
+    {"time": 0, "pose": "idle"}
+  ]
+}

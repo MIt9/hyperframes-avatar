@@ -1,0 +1,11 @@
+{
+  "version":1,"characterId":"pixel-presenter","duration":8,"motionPreset":"lively",
+  "commands":[
+    {"time":0,"pose":"idle"},
+    {"time":0.7,"pose":"point_viewer","bounce":true},
+    {"time":2,"pose":"point_up","bounce":true},
+    {"time":3.5,"pose":"shrug","emotion":"surprised","bounce":true},
+    {"time":5,"pose":"fist","bounce":true},
+    {"time":7,"pose":"idle"}
+  ]
+}

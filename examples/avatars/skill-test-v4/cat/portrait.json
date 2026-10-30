@@ -1,0 +1,4 @@
+{"kind":"talking-portrait","id":"skill-test-cat","base":"assets/avatar/base-mouthless.png","mouthlessBase":true,"size":[1254,1254],
+ "mouth":{"style":"cat","x":0.485,"y":0.31,"width":0.065,"height":0.04,"ink":"#4A2A2A","teeth":"#FFF9EE","tongue":"#D88489"},
+ "eyes":{"color":"#312B2C","line":"#1A1415","boxes":[{"x":0.413,"y":0.195,"width":0.084,"height":0.07},{"x":0.541,"y":0.195,"width":0.084,"height":0.07}]},
+ "layers":[{"id":"tail","src":"assets/avatar/tail.png","placement":"behind","origin":[500,1130],"motion":{"type":"sway","amplitude":7.5,"period":1.8,"cycle":5.4,"active":3.6}}]}

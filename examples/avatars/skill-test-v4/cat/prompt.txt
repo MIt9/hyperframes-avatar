@@ -1,0 +1,9 @@
+Use case: stylized-concept. Asset: character model sheet for animation.
+Character: cat; black-and-white tuxedo cat, natural neutral sitting pose; natural seated feline with resting front paws and clearly visible curved tail; black fur with white muzzle, chest and paws; two upright ears; tail clearly visible beside body; open amber eyes looking at viewer.
+Style: smooth 2D cartoon; flat solid #00FF00 background, no shadow, no gradient, no floor; flat colors with gentle cel shading.
+Palette: ink=#242127, furBlack=#29282E, furWhite=#F5F1E8, nose=#C57E88, eyes=#DFAE42, teeth=#FFF9EE, tongue=#D88489.
+Framing: [1024, 1024]; background #00FF00.
+Poses: idle. Keep consistent proportions, separate figures and complete species-appropriate extremities.
+Invariants: same tuxedo markings; natural feline anatomy; relaxed paws on ground; tail visible, never hidden behind body.
+Avoid: human clothing; human hands; raised paw; gesture; pixel art; photorealism; 3D; text; logos; gradient background; floor shadows. No labels or watermarks.
+This is reference art; do not claim the result is an aligned transparent layer pack.

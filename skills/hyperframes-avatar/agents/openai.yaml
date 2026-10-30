@@ -1,0 +1,4 @@
+interface:
+  display_name: "HyperFrames Avatar"
+  short_description: "Create and direct avatars with JSON contracts"
+  default_prompt: "Use $hyperframes-avatar to create a consistent character and drive its speech and gestures from validated JSON."

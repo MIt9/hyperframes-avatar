@@ -1,0 +1,37 @@
+{
+  "name": "hyperframes-sprite-avatar",
+  "version": "0.1.0",
+  "description": "Framework-free lip-sync 2D sprite and portrait avatars for HyperFrames videos",
+  "license": "MIT",
+  "repository": { "type": "git", "url": "git+https://github.com/MIt9/hyperframes-avatar.git" },
+  "keywords": ["hyperframes", "avatar", "lip-sync", "video", "gsap"],
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "import": "./src/index.js"
+    },
+    "./hyperframes": {
+      "types": "./src/hyperframes.d.ts",
+      "import": "./src/hyperframes.js"
+    }
+  },
+  "bin": {
+    "hyperframes-avatar-create-component": "scripts/create-component.js",
+    "hyperframes-avatar-envelope": "scripts/audio-envelope.js",
+    "hyperframes-avatar-install-skill": "scripts/install-avatar-skill.js"
+  },
+  "files": ["src", "skills", "compositions", "assets", "docs", "scripts", "LICENSE"],
+  "scripts": {
+    "test": "node --test",
+    "demo": "python3 -m http.server 4173 --bind 127.0.0.1",
+    "envelope": "node scripts/audio-envelope.js",
+    "component": "node scripts/create-component.js"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "gsap": "3.15.0"
+  }
+}

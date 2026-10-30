@@ -1,0 +1,24 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "title":"Compact avatar direction for small models",
+  "type":"object","additionalProperties":false,
+  "required":["version","characterId","duration","motionPreset","commands"],
+  "properties":{
+    "$schema":{"type":"string"}, "version":{"const":1},
+    "characterId":{"type":"string","pattern":"^[a-z][a-z0-9-]{0,63}$"},
+    "duration":{"type":"number","exclusiveMinimum":0,"maximum":3600},
+    "motionPreset":{"enum":["off","subtle","lively"]},
+    "commands":{
+      "type":"array","minItems":1,"maxItems":500,
+      "items":{
+        "type":"object","additionalProperties":false,"required":["time","pose"],
+        "properties":{
+          "time":{"type":"number","minimum":0},
+          "pose":{"enum":["idle","point_viewer","point_up","shrug","fist"]},
+          "emotion":{"enum":["open","surprised"]},
+          "bounce":{"type":"boolean"}
+        }
+      }
+    }
+  }
+}

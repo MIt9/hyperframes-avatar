@@ -1,0 +1,10 @@
+{
+  "kind":"talking-portrait","id":"portrait-example","base":"assets/avatar/base-mouthless.png",
+  "mouthlessBase":true,"size":[1254,1254],
+  "mouth":{"style":"human","x":0.448,"y":0.34,"width":0.116,"height":0.065,"ink":"#593229","teeth":"#FFF9EE","tongue":"#D88489"},
+  "eyes":{"color":"#D98F55","line":"#3A2418","boxes":[
+    {"x":0.405,"y":0.243,"width":0.082,"height":0.068},{"x":0.525,"y":0.243,"width":0.082,"height":0.068}]},
+  "layers":[
+    {"id":"tail","src":"assets/avatar/tail.png","placement":"behind","origin":[310,1060],
+     "motion":{"type":"sway","amplitude":7.5,"period":1.8,"cycle":5.4,"active":3.6}}]
+}

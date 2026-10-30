@@ -1,0 +1,57 @@
+{
+  "$schema": "design.schema.json",
+  "version": 1,
+  "id": "skill-test-human",
+  "status": "concept",
+  "identity": {
+    "kind": "human-portrait",
+    "presentation": "young adult woman, friendly and calm",
+    "hair": "curly auburn hair, shoulder length, loose curls",
+    "outfit": "green knit sweater with a crew neck",
+    "silhouette": "rounded head, upper body visible to the waist, arms relaxed at the sides",
+    "invariants": [
+      "same face, auburn curls and green sweater in every frame",
+      "front-facing waist-up framing",
+      "arms relaxed down at the sides, hands not gesturing",
+      "mouth closed and eyes open in the base art"
+    ]
+  },
+  "render": {
+    "style": "smooth 2D cartoon character",
+    "shading": "flat colors with one soft cel-shadow tone",
+    "outlinePx": 4,
+    "referenceCanvas": [1254, 1254],
+    "background": "#E6EBE5"
+  },
+  "palette": {
+    "ink": "#2B2A33",
+    "skin": "#F2C4A0",
+    "skinShadow": "#D9997A",
+    "hair": "#A4492A",
+    "hairShadow": "#7A3320",
+    "sweater": "#3E7D5A",
+    "sweaterShadow": "#2D5E42",
+    "eyeWhite": "#FFFFFF",
+    "mouth": "#593229",
+    "tongue": "#D88489"
+  },
+  "proportions": {
+    "headToVisibleHeight": 0.42,
+    "eyeSeparationToHeadWidth": 0.38,
+    "handToHeadWidth": 0.22,
+    "minimumSilhouettePadding": 0.1
+  },
+  "expressionSet": ["neutral", "happy", "curious"],
+  "poseSet": ["idle"],
+  "avoid": [
+    "pixel art",
+    "photorealism",
+    "3D plastic",
+    "logos",
+    "text inside character art",
+    "extra fingers",
+    "cropped hands",
+    "identity changes between frames",
+    "a painted second mouth"
+  ]
+}

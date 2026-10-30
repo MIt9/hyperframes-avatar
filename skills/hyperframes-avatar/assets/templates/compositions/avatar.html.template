@@ -1,0 +1,19 @@
+<template>
+  <style>#root {position:absolute;inset:0}</style>
+  <div id="root" data-composition-id="avatar" data-start="0" data-duration="__DURATION__" data-width="1920" data-height="1080" data-layout-allow-overflow></div>
+  <script>
+    const avatarRoot = document.querySelector('#root');
+    const avatarId = avatarRoot.closest('[data-composition-id]').getAttribute('data-composition-id');
+    const build = Promise.all([import('./src/hyperframes.js'), import('./assets/avatar/config.js')])
+      .then(async ([{mountHyperframesAvatar}, {default: config}]) => {
+        const avatar = mountHyperframesAvatar(avatarRoot, config, {compositionId:avatarId, duration:__DURATION__, target:window, gsap});
+        await avatar.ready;
+        window.__timelines = window.__timelines || {};
+        window.__timelines.avatar = avatar.timeline;
+        return avatar;
+      });
+    window.__hf = window.__hf || {};
+    window.__hf.buildReady = window.__hf.buildReady || {};
+    window.__hf.buildReady[`${avatarId}:module`] = build;
+  </script>
+</template>

@@ -1,0 +1,121 @@
+[
+  {
+    "sourceTime": 3.5,
+    "time": 0.20000000000000018,
+    "language": "en",
+    "text": "Look at this little avatar.",
+    "pose": "point_viewer"
+  },
+  {
+    "sourceTime": 5.63,
+    "time": 2.33,
+    "language": "en",
+    "text": "First, it raises a hand to get your attention.",
+    "pose": "point_up"
+  },
+  {
+    "sourceTime": 8.34,
+    "time": 5.04,
+    "language": "en",
+    "text": "But why does it change its expression?",
+    "pose": "shrug"
+  },
+  {
+    "sourceTime": 10.59,
+    "time": 7.29,
+    "language": "en",
+    "text": "Because every story needs a little emotion.",
+    "pose": "idle"
+  },
+  {
+    "sourceTime": 13.65,
+    "time": 10.350000000000001,
+    "language": "en",
+    "text": "You speak, it moves, and the message comes alive.",
+    "pose": "point_viewer"
+  },
+  {
+    "sourceTime": 15.45,
+    "time": 12.149999999999999,
+    "language": "en",
+    "text": "The message comes alive.",
+    "pose": "fist"
+  },
+  {
+    "sourceTime": 17.68,
+    "time": 14.379999999999999,
+    "language": "en",
+    "text": "Now let’s try the same thing in Ukrainian.",
+    "pose": "point_up"
+  },
+  {
+    "sourceTime": 20.12,
+    "time": 16.82,
+    "language": "uk",
+    "text": "Подивись на цього маленького аватара.",
+    "pose": "point_viewer"
+  },
+  {
+    "sourceTime": 22.53,
+    "time": 19.23,
+    "language": "uk",
+    "text": "Спочатку він піднімає руку, щоб привернути твою увагу.",
+    "pose": "point_up"
+  },
+  {
+    "sourceTime": 26.22,
+    "time": 22.919999999999998,
+    "language": "uk",
+    "text": "Але чому він змінює вираз обличчя?",
+    "pose": "shrug"
+  },
+  {
+    "sourceTime": 28.9,
+    "time": 25.599999999999998,
+    "language": "uk",
+    "text": "Тому що кожній історії потрібно трохи емоцій.",
+    "pose": "idle"
+  },
+  {
+    "sourceTime": 32.16,
+    "time": 28.859999999999996,
+    "language": "uk",
+    "text": "Ти говориш, він рухається, і повідомлення оживає.",
+    "pose": "point_viewer"
+  },
+  {
+    "sourceTime": 34.25,
+    "time": 30.95,
+    "language": "uk",
+    "text": "Повідомлення оживає.",
+    "pose": "fist"
+  },
+  {
+    "sourceTime": 36.53,
+    "time": 33.230000000000004,
+    "language": "uk",
+    "text": "А тепер подивімося, як голос і жести працюють разом у нашому короткому відео.",
+    "pose": "point_up"
+  },
+  {
+    "sourceTime": 39.5,
+    "time": 36.2,
+    "language": "uk",
+    "text": "Жести працюють разом.",
+    "pose": "point_viewer"
+  },
+  {
+    "sourceTime": 40.8,
+    "time": 37.5,
+    "language": "uk",
+    "text": "У нашому короткому відео.",
+    "pose": "fist"
+  },
+  {
+    "sourceTime": 41.7,
+    "time": 38.400000000000006,
+    "language": "uk",
+    "text": "",
+    "pose": "idle"
+  }
+]

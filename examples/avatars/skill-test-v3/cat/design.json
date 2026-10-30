@@ -1,0 +1,64 @@
+{
+  "$schema": "design.schema.json",
+  "version": 1,
+  "id": "skill-test-cat",
+  "status": "concept",
+  "identity": {
+    "kind": "animal-portrait",
+    "presentation": "black-and-white tuxedo cat, calm and attentive",
+    "hair": "short smooth fur, black back and head with a white chest, white muzzle and white paws",
+    "outfit": "none",
+    "features": [
+      "black fur on head, back and upper legs",
+      "white bib on chest, white muzzle and white paws",
+      "pink nose, green eyes",
+      "long black tail with a white tip, visible at the side"
+    ],
+    "silhouette": "rounded head with pointed ears, seated upright body, tail hanging visibly to one side",
+    "invariants": [
+      "same black and white tuxedo markings in every frame",
+      "front-facing upright seated framing",
+      "paws relaxed on the ground, not raised",
+      "mouth closed and eyes open in the base art",
+      "tail fully visible and separate from the body"
+    ]
+  },
+  "render": {
+    "style": "smooth 2D cartoon animal",
+    "shading": "flat colors with one soft cel-shadow tone",
+    "outlinePx": 4,
+    "referenceCanvas": [1254, 1254],
+    "background": "#E6EBE5"
+  },
+  "palette": {
+    "ink": "#22222A",
+    "furBlack": "#1E1E24",
+    "furBlackShadow": "#3A3A44",
+    "furWhite": "#F7F5EF",
+    "furWhiteShadow": "#D8D4C8",
+    "nose": "#D98A9A",
+    "eyeGreen": "#8BC34A",
+    "mouth": "#3A2A2E",
+    "tongue": "#D4707E"
+  },
+  "proportions": {
+    "headToVisibleHeight": 0.4,
+    "eyeSeparationToHeadWidth": 0.36,
+    "pawToHeadWidth": 0.3,
+    "minimumSilhouettePadding": 0.1
+  },
+  "expressionSet": ["neutral", "curious"],
+  "poseSet": ["idle"],
+  "avoid": [
+    "pixel art",
+    "photorealism",
+    "3D plastic",
+    "logos",
+    "text inside character art",
+    "extra legs",
+    "cropped tail",
+    "identity changes between frames",
+    "a painted second mouth",
+    "raised paw gesture"
+  ]
+}

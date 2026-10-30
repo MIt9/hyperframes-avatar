@@ -1,0 +1,66 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "title":"Transparent mouthless portrait: RMS mouth, optional blinking eyelids and swaying layers (tail, ear, hair)",
+  "type":"object","additionalProperties":false,
+  "required":["kind","id","base","mouthlessBase","size","mouth"],
+  "properties":{
+    "kind":{"const":"talking-portrait"},
+    "id":{"type":"string","pattern":"^[a-z][a-z0-9-]{0,63}$"},
+    "base":{"type":"string","minLength":1},
+    "mouthlessBase":{"const":true},
+    "size":{"type":"array","minItems":2,"maxItems":2,"items":{"type":"integer","minimum":1,"maximum":8192}},
+    "mouth":{
+      "type":"object","additionalProperties":false,
+      "required":["style","x","y","width","height","ink","teeth","tongue"],
+      "properties":{
+        "style":{"enum":["human","cat"]},
+        "x":{"type":"number","minimum":0,"maximum":1},
+        "y":{"type":"number","minimum":0,"maximum":1},
+        "width":{"type":"number","exclusiveMinimum":0,"maximum":1},
+        "height":{"type":"number","exclusiveMinimum":0,"maximum":1},
+        "ink":{"$ref":"#/$defs/color"},"teeth":{"$ref":"#/$defs/color"},"tongue":{"$ref":"#/$defs/color"}
+      }
+    },
+    "eyes":{
+      "description":"Blinking. Each box is a normalized rectangle covering one whole open eye (white, iris, lash line); color is the surrounding skin/fur, line is the closed-lid stroke.",
+      "type":"object","additionalProperties":false,"required":["color","line","boxes"],
+      "properties":{
+        "color":{"$ref":"#/$defs/color"},"line":{"$ref":"#/$defs/color"},
+        "boxes":{"type":"array","minItems":1,"maxItems":4,"items":{"$ref":"#/$defs/box"}}
+      }
+    },
+    "layers":{
+      "description":"Extra transparent PNGs. Without x/y/width/height a layer is a full canvas (same size as base).",
+      "type":"array","maxItems":8,
+      "items":{
+        "type":"object","additionalProperties":false,"required":["id","src"],
+        "properties":{
+          "id":{"type":"string","pattern":"^[a-z][a-z0-9-]{0,31}$"},
+          "src":{"type":"string","minLength":1},
+          "placement":{"enum":["behind","front"]},
+          "x":{"type":"number"},"y":{"type":"number"},
+          "width":{"type":"number","exclusiveMinimum":0},"height":{"type":"number","exclusiveMinimum":0},
+          "origin":{"description":"Pivot in base pixels (where the layer attaches to the body).","type":"array","minItems":2,"maxItems":2,"items":{"type":"number"}},
+          "motion":{
+            "description":"Swings around origin for `active` seconds of every `cycle`, then rests. Degrees, seconds.",
+            "type":"object","additionalProperties":false,"required":["type","amplitude","period"],
+            "properties":{
+              "type":{"const":"sway"},
+              "amplitude":{"type":"number","minimum":0,"maximum":20},
+              "period":{"type":"number","exclusiveMinimum":0},
+              "cycle":{"type":"number","exclusiveMinimum":0},
+              "active":{"type":"number","minimum":0},
+              "rest":{"type":"number","minimum":0,"maximum":1}
+            }
+          }
+        }
+      }
+    }
+  },
+  "$defs":{
+    "color":{"type":"string","pattern":"^#[0-9a-fA-F]{6}$"},
+    "box":{"type":"object","additionalProperties":false,"required":["x","y","width","height"],
+      "properties":{"x":{"type":"number","minimum":0,"maximum":1},"y":{"type":"number","minimum":0,"maximum":1},
+        "width":{"type":"number","exclusiveMinimum":0,"maximum":1},"height":{"type":"number","exclusiveMinimum":0,"maximum":1}}}
+  }
+}

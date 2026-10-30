@@ -1,0 +1,61 @@
+<template>
+  <style>
+    #root {position:absolute;inset:0;font-family:Inter,sans-serif;color:#24283B}
+    .heading {position:absolute;left:192px;top:108px;width:1536px;margin:0;text-align:center;font-size:52px;font-weight:700;line-height:64px}
+    .stage {position:absolute;top:220px;width:544px;height:700px}
+    .pixel-stage {left:96px}
+    .presenter-stage {left:688px}
+    .cat-stage {left:1280px}
+    .label {position:absolute;top:930px;width:544px;margin:0;text-align:center;font-size:32px;font-weight:400;line-height:40px}
+    .pixel-label {left:96px}
+    .presenter-label {left:688px}
+    .cat-label {left:1280px}
+  </style>
+  <div data-hf-id="hf-4e68" id="root" data-composition-id="gallery" data-start="0" data-duration="38.666666666666664" data-width="1920" data-height="1080">
+    <h1 data-hf-id="hf-tk5k" id="gallery-heading" class="clip heading" data-start="0" data-duration="38.666666666666664">Три аватари — один голос</h1>
+    <div data-hf-id="hf-ce0e" id="gallery-pixel" class="clip stage pixel-stage" data-start="0" data-duration="38.666666666666664" data-layout-allow-overflow></div>
+    <div data-hf-id="hf-gfnb" id="gallery-presenter" class="clip stage presenter-stage" data-start="0" data-duration="38.666666666666664" data-layout-allow-overflow></div>
+    <div data-hf-id="hf-cxob" id="gallery-cat" class="clip stage cat-stage" data-start="0" data-duration="38.666666666666664" data-layout-allow-overflow></div>
+    <p data-hf-id="hf-0e4f" id="gallery-pixel-label" class="clip label pixel-label" data-start="0" data-duration="38.666666666666664">Піксельний</p>
+    <p data-hf-id="hf-9kp6" id="gallery-presenter-label" class="clip label presenter-label" data-start="0" data-duration="38.666666666666664">Жінка</p>
+    <p data-hf-id="hf-hdye" id="gallery-cat-label" class="clip label cat-label" data-start="0" data-duration="38.666666666666664">Кіт-смокінг</p>
+  </div>
+  <script>
+    const galleryRoot = document.querySelector('#root');
+    const pixelHost = document.querySelector('#gallery-pixel');
+    const presenterHost = document.querySelector('#gallery-presenter');
+    const catHost = document.querySelector('#gallery-cat');
+    const galleryBuild = Promise.all([
+      import('./src/index.js'), import('./assets/avatar/recording.js'), import('./assets/avatar/portraits.js'),
+    ]).then(async ([{createSpriteAvatar, createTalkingPortrait}, {recordingProps}, {humanProps,catProps}]) => {
+      const pixel = createSpriteAvatar(recordingProps);
+      pixelHost.append(pixel.element);
+      const presenter = createTalkingPortrait(humanProps);
+      const cat = createTalkingPortrait(catProps);
+      presenterHost.append(presenter.element);
+      catHost.append(cat.element);
+      await Promise.all([pixel.ready, presenter.ready, cat.ready]);
+      const clock = {time:0};
+      function renderAt(time) {
+        pixel.renderAt(time);
+        presenter.renderAt(time);
+        cat.renderAt(time);
+      }
+      renderAt(0);
+      const frameReady = () => Promise.all([pixel.whenFrameReady(), presenter.whenFrameReady(), cat.whenFrameReady()]);
+      await frameReady();
+      const timeline = gsap.timeline({paused:true});
+      timeline.to(clock, {time:38.666666666666664, duration:38.666666666666664, ease:'none', onUpdate:() => renderAt(clock.time)});
+      window.addEventListener('hf-seek', event => {
+        renderAt(timeline.time());
+        event.detail.waitUntil?.(frameReady());
+      });
+      window.__timelines = window.__timelines || {};
+      window.__timelines.gallery = timeline;
+      return {pixel, presenter, cat, timeline};
+    });
+    window.__hf = window.__hf || {};
+    window.__hf.buildReady = window.__hf.buildReady || {};
+    window.__hf.buildReady.gallery = galleryBuild;
+  </script>
+</template>

@@ -1,0 +1,5 @@
+{
+  "off":{"breathAmplitude":0,"breathPeriod":3.2,"swayDegrees":0,"swayPeriod":4.5,"gestureLeanDegrees":0,"poseTransition":0},
+  "subtle":{"breathAmplitude":0.004,"breathPeriod":3.6,"swayDegrees":0.5,"swayPeriod":5,"gestureLeanDegrees":1.5,"poseTransition":0.08},
+  "lively":{"breathAmplitude":0.008,"breathPeriod":3.2,"swayDegrees":1.2,"swayPeriod":4.5,"gestureLeanDegrees":3,"poseTransition":0.12}
+}

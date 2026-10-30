@@ -1,0 +1,16 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Avatar composition</title></head>
+<body style="margin:0">
+  <div id="root" data-composition-id="main" data-start="0" data-duration="__DURATION__" data-width="1920" data-height="1080" style="position:relative;width:1920px;height:1080px">
+    <div id="ground" class="clip" data-start="0" data-duration="__DURATION__" data-track-index="0" style="position:absolute;inset:0;background:#E6EBE5"></div>
+    <div id="avatar" class="clip" data-composition-id="avatar" data-composition-src="compositions/avatar.html" data-start="0" data-duration="__DURATION__" data-width="1920" data-height="1080" data-track-index="1" data-track-kind="graphics"></div>
+    __AUDIO__
+  </div>
+  <script src="lib/gsap.min.js"></script>
+  <script>
+    const timeline = gsap.timeline({ paused: true });
+    timeline.to({}, { duration: __DURATION__ });
+    window.__timelines = window.__timelines || {};
+    window.__timelines.main = timeline;
+  </script>
+</body></html>

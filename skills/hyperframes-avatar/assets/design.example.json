@@ -1,0 +1,70 @@
+{
+  "$schema": "design.schema.json",
+  "version": 1,
+  "id": "presenter-v2",
+  "status": "concept",
+  "identity": {
+    "kind": "human-presenter",
+    "presentation": "friendly youthful adult",
+    "hair": "short dark wavy hair with a single swept quiff",
+    "outfit": "periwinkle hoodie with two cream drawstrings",
+    "silhouette": "oversized rounded head, compact torso, broad readable mitten hands",
+    "invariants": [
+      "same face and swept quiff in every pose",
+      "same hoodie and drawstrings",
+      "front-facing waist-up framing",
+      "both hands fully visible"
+    ]
+  },
+  "render": {
+    "style": "smooth 2D animation character",
+    "shading": "flat colors with one soft cel-shadow tone",
+    "outlinePx": 4,
+    "referenceCanvas": [
+      1536,
+      1024
+    ],
+    "background": "#E6EBE5"
+  },
+  "palette": {
+    "ink": "#24283B",
+    "skin": "#D99D70",
+    "skinShadow": "#BA7954",
+    "hoodie": "#6376BA",
+    "hoodieShadow": "#4C5E9B",
+    "drawstrings": "#F8F6F0",
+    "eyeWhite": "#FFFFFF",
+    "mouth": "#3A2430",
+    "tongue": "#C76C78"
+  },
+  "proportions": {
+    "headToVisibleHeight": 0.48,
+    "eyeSeparationToHeadWidth": 0.38,
+    "handToHeadWidth": 0.22,
+    "minimumSilhouettePadding": 0.1
+  },
+  "expressionSet": [
+    "neutral",
+    "happy",
+    "curious",
+    "surprised",
+    "confident"
+  ],
+  "poseSet": [
+    "idle",
+    "point_viewer",
+    "point_up",
+    "shrug",
+    "fist"
+  ],
+  "avoid": [
+    "pixel art",
+    "photorealism",
+    "3D plastic",
+    "logos",
+    "text inside character art",
+    "extra fingers",
+    "cropped hands",
+    "identity changes between poses"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "version":1,"id":"human","status":"concept",
+  "identity":{"kind":"human","presentation":"young adult woman, relaxed neutral expression","hair":"curly auburn hair","outfit":"plain GREEN sweater","silhouette":"rounded cartoon head, natural torso, both arms down and relaxed","invariants":["curly auburn hair","green sweater","front facing, open eyes looking at viewer","neutral pose, arms down, no demonstration gesture"]},
+  "render":{"style":"smooth 2D cartoon; flat solid #FF00FF background, no shadow, no gradient, no floor","shading":"flat colors with gentle cel shading","outlinePx":3,"referenceCanvas":[1024,1024],"background":"#FF00FF"},
+  "palette":{"ink":"#302326","skin":"#E6B594","hair":"#934528","sweater":"#368A51","teeth":"#FFF9EE","tongue":"#D88489"},
+  "proportions":{"headToVisibleHeight":0.4,"eyeSeparationToHeadWidth":0.38,"handToHeadWidth":0.2,"minimumSilhouettePadding":0.1},
+  "expressionSet":["neutral"],"poseSet":["idle"],
+  "avoid":["pixel art","photorealism","3D","text","logos","raised arms","open palms","cropped hands","gradient background","floor shadows"]
+}

@@ -1,0 +1,272 @@
+[
+  {
+    "text": "Look",
+    "start": 0,
+    "end": 0.81,
+    "id": "w0"
+  },
+  {
+    "text": "at",
+    "start": 0.81,
+    "end": 1.21,
+    "id": "w1"
+  },
+  {
+    "text": "this",
+    "start": 1.21,
+    "end": 2.02,
+    "id": "w2"
+  },
+  {
+    "text": "little",
+    "start": 2.02,
+    "end": 3.24,
+    "id": "w3"
+  },
+  {
+    "text": "avatar.",
+    "start": 3.9,
+    "end": 5.09,
+    "id": "w4"
+  },
+  {
+    "text": "First,",
+    "start": 5.1,
+    "end": 5.75,
+    "id": "w5"
+  },
+  {
+    "text": "it",
+    "start": 5.75,
+    "end": 5.94,
+    "id": "w6"
+  },
+  {
+    "text": "raises",
+    "start": 5.94,
+    "end": 6.5,
+    "id": "w7"
+  },
+  {
+    "text": "a",
+    "start": 6.5,
+    "end": 6.59,
+    "id": "w8"
+  },
+  {
+    "text": "hand",
+    "start": 6.59,
+    "end": 7,
+    "id": "w9"
+  },
+  {
+    "text": "to",
+    "start": 7,
+    "end": 7.08,
+    "id": "w10"
+  },
+  {
+    "text": "get",
+    "start": 7.08,
+    "end": 7.2,
+    "id": "w11"
+  },
+  {
+    "text": "your",
+    "start": 7.2,
+    "end": 7.3,
+    "id": "w12"
+  },
+  {
+    "text": "attention.",
+    "start": 7.3,
+    "end": 8.42,
+    "id": "w13"
+  },
+  {
+    "text": "But",
+    "start": 8.42,
+    "end": 8.63,
+    "id": "w14"
+  },
+  {
+    "text": "why",
+    "start": 8.63,
+    "end": 8.84,
+    "id": "w15"
+  },
+  {
+    "text": "does",
+    "start": 8.84,
+    "end": 9.12,
+    "id": "w16"
+  },
+  {
+    "text": "it",
+    "start": 9.12,
+    "end": 9.26,
+    "id": "w17"
+  },
+  {
+    "text": "change",
+    "start": 9.26,
+    "end": 9.68,
+    "id": "w18"
+  },
+  {
+    "text": "its",
+    "start": 9.68,
+    "end": 9.89,
+    "id": "w19"
+  },
+  {
+    "text": "expression?",
+    "start": 9.89,
+    "end": 10.82,
+    "id": "w20"
+  },
+  {
+    "text": "Because",
+    "start": 10.82,
+    "end": 11.34,
+    "id": "w21"
+  },
+  {
+    "text": "every",
+    "start": 11.34,
+    "end": 11.71,
+    "id": "w22"
+  },
+  {
+    "text": "story",
+    "start": 11.71,
+    "end": 12.08,
+    "id": "w23"
+  },
+  {
+    "text": "needs",
+    "start": 12.08,
+    "end": 12.45,
+    "id": "w24"
+  },
+  {
+    "text": "a",
+    "start": 12.45,
+    "end": 12.52,
+    "id": "w25"
+  },
+  {
+    "text": "little",
+    "start": 12.52,
+    "end": 12.96,
+    "id": "w26"
+  },
+  {
+    "text": "emotion.",
+    "start": 12.96,
+    "end": 13.74,
+    "id": "w27"
+  },
+  {
+    "text": "You",
+    "start": 13.74,
+    "end": 14,
+    "id": "w28"
+  },
+  {
+    "text": "speak,",
+    "start": 14,
+    "end": 14.61,
+    "id": "w29"
+  },
+  {
+    "text": "it",
+    "start": 14.61,
+    "end": 14.78,
+    "id": "w30"
+  },
+  {
+    "text": "moves,",
+    "start": 14.78,
+    "end": 15.39,
+    "id": "w31"
+  },
+  {
+    "text": "and",
+    "start": 15.39,
+    "end": 15.65,
+    "id": "w32"
+  },
+  {
+    "text": "the",
+    "start": 15.65,
+    "end": 15.91,
+    "id": "w33"
+  },
+  {
+    "text": "message",
+    "start": 15.91,
+    "end": 16.53,
+    "id": "w34"
+  },
+  {
+    "text": "comes",
+    "start": 16.53,
+    "end": 16.97,
+    "id": "w35"
+  },
+  {
+    "text": "alive.",
+    "start": 16.97,
+    "end": 17.74,
+    "id": "w36"
+  },
+  {
+    "text": "Now",
+    "start": 17.74,
+    "end": 17.88,
+    "id": "w37"
+  },
+  {
+    "text": "let's",
+    "start": 17.88,
+    "end": 18.11,
+    "id": "w38"
+  },
+  {
+    "text": "try",
+    "start": 18.11,
+    "end": 18.25,
+    "id": "w39"
+  },
+  {
+    "text": "the",
+    "start": 18.25,
+    "end": 18.39,
+    "id": "w40"
+  },
+  {
+    "text": "same",
+    "start": 18.39,
+    "end": 18.58,
+    "id": "w41"
+  },
+  {
+    "text": "thing",
+    "start": 18.58,
+    "end": 18.82,
+    "id": "w42"
+  },
+  {
+    "text": "in",
+    "start": 18.82,
+    "end": 18.91,
+    "id": "w43"
+  },
+  {
+    "text": "Ukrainian.",
+    "start": 18.91,
+    "end": 19.58,
+    "id": "w44"
+  }
+]
