@@ -21,7 +21,7 @@
     "hyperframes-avatar-envelope": "scripts/audio-envelope.js",
     "hyperframes-avatar-install-skill": "scripts/install-avatar-skill.js"
   },
-  "files": ["src", "skills", "compositions", "assets", "docs", "scripts", "LICENSE"],
+  "files": ["src", "skills", "compositions", "assets", "docs", "scripts", "LICENSE", "README.uk.md"],
   "scripts": {
     "test": "node --test",
     "demo": "python3 -m http.server 4173 --bind 127.0.0.1",

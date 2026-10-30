@@ -1,8 +1,12 @@
 # hyperframes-sprite-avatar
 
+**English** · [Українська](README.uk.md)
+
 Talking 2D avatars for HyperFrames videos. The mouth follows an audio envelope, eyes blink, the body breathes and sways, gestures come from a timeline. Every visible state is a pure function of the frame time, so seeking and parallel rendering work. The core is a framework-free DOM component with TypeScript types and no runtime dependencies.
 
-**Demo:** [`examples/videos/voice-test/renders/avatar-en-uk.mp4`](examples/videos/voice-test/renders/avatar-en-uk.mp4) — a pixel presenter speaking English and Ukrainian (38 s, 1080p, 30 fps).
+[![Demo: pixel presenter speaking English and Ukrainian](docs/preview.gif)](https://github.com/MIt9/hyperframes-avatar/blob/main/examples/videos/voice-test/renders/avatar-en-uk.mp4)
+
+▶ [Watch the full demo video](https://github.com/MIt9/hyperframes-avatar/blob/main/examples/videos/voice-test/renders/avatar-en-uk.mp4): a pixel presenter speaking English and Ukrainian (38 s, 1080p, 30 fps).
 
 ## Install
 
@@ -36,17 +40,41 @@ avatar.renderAt(1.09);              // seconds
 const detach = bindHyperframes(avatar, { offset: 0 }); // follows HyperFrames hf-seek
 ```
 
-Audio envelope from any audio file:
+Drop-in HyperFrames sub-composition: [`docs/hyperframes-component.md`](docs/hyperframes-component.md) (`npx hyperframes-avatar-create-component <id>`, docs in Ukrainian).
+
+### Sprite assets
+
+All layers need a transparent background and the same `gridSize`. Order: `base → eyes → mouth → pose`. Required: a base without eyes, mouth and arms; `eyes.open/blink`; `mouth.closed/half/open`; `poses.idle`. Other poses are free-form, but every pose used in the timeline must exist in the pack. Sprite sheets are not supported yet.
+
+Place parts on a shared grid and leave room for the arms. Local URLs resolve against the HTML document; in HyperFrames use `assets/...`. Outline and shadow are applied to the whole group by one SVG filter, so layer seams have no outlines. Each instance gets its own filter id.
+
+### Audio
+
+Needs `ffmpeg`:
 
 ```sh
 npx hyperframes-avatar-envelope speech.wav speech-envelope.json 30
 ```
 
-Drop-in HyperFrames sub-composition: [`docs/hyperframes-component.md`](docs/hyperframes-component.md) (`npx hyperframes-avatar-create-component <id>`).
+The script streams the audio as mono float32 24 kHz and writes `{ audioFps, audioEnvelope }`. An existing output file is never overwritten. RMS values are in `[0, 1]`, there is no automatic normalization (normalize quiet voices first). Mouth thresholds: `<0.05` closed, `<0.25` half open, otherwise open; a causal 3-sample average is applied and the mouth closes after the array ends. The component does not play audio: add a HyperFrames audio track that starts at the same time as the avatar.
+
+### Gestures
+
+```js
+import { tagGestures } from 'hyperframes-sprite-avatar';
+const poseKeyframes = tagGestures([
+  { time: 0, text: 'Why does this matter?' },
+  { time: 2, text: 'Look at the first rule' },
+  { time: 5, text: 'You can repeat it' },
+  { time: 8, text: 'Done!', finale: true },
+], Object.keys(pack.layers.poses));
+```
+
+A simple English/Ukrainian keyword mapper, not semantic LLM tagging. Input is segments or words with times in seconds; the finale is marked explicitly. The timeline is sorted; for equal timestamps the last pose wins. A pose and emotion stay until the next keyframe.
 
 ## Create your own avatar (agent skill)
 
-[`skills/hyperframes-avatar/SKILL.md`](skills/hyperframes-avatar/SKILL.md) is a skill for an AI coding agent: it designs a character, validates JSON design tokens, builds a talking portrait from generated art (chroma-key, mouth/eye measuring) and compiles short scene JSON into a self-contained HyperFrames project. Install it with:
+[`skills/hyperframes-avatar/SKILL.md`](skills/hyperframes-avatar/SKILL.md) is a skill for an AI coding agent. It designs a character, validates JSON design tokens, builds a talking portrait from generated art (chroma-key, mouth/eye measuring) and compiles short scene JSON into a self-contained HyperFrames project. Install it with:
 
 ```sh
 npx hyperframes-avatar-install-skill
@@ -56,11 +84,11 @@ npx hyperframes-avatar-install-skill
 
 Everything that is not the package lives in [`examples/`](examples):
 
-- `avatars/skill-test-v4/` — a woman and a tuxedo cat (`portrait.json`, `design.json`, `scene.json`, full generated projects in `project-*`).
-- `videos/voice-test/` — the demo video above, with its source composition.
-- `videos/all-avatars/` — the pixel presenter, the woman and the cat side by side.
-- `demo/preview.htm` — interactive scrubber: `npm run demo`, then open <http://localhost:4173/examples/demo/preview.htm>.
-- `notes/` — early design notes.
+- `avatars/skill-test-v4/`: a woman and a tuxedo cat (`portrait.json`, `design.json`, `scene.json`, full generated projects in `project-*`).
+- `videos/voice-test/`: the demo video above with its source composition.
+- `videos/all-avatars/`: the pixel presenter, the woman and the cat side by side.
+- `demo/preview.htm`: interactive scrubber. Run `npm run demo`, then open <http://localhost:4173/examples/demo/preview.htm>.
+- `notes/`: early design notes (Ukrainian).
 
 ## Development
 
@@ -71,39 +99,4 @@ npm test
 
 ## License
 
-MIT. Example artwork in `examples/avatars` and `examples/videos` was generated with AI image tools; the voice recording belongs to the repository author and is included as a demo sample.
-
----
-
-# Довідка (українською)
-
-
-## Асети
-
-Усі шари повинні мати прозорий фон і однаковий розмір `gridSize`. Порядок: `base → eyes → mouth → pose`. Обов'язкові: база без очей, рота та рук; `eyes.open/blink`; `mouth.closed/half/open`; `poses.idle`. Решта поз довільні, але кожна поза таймлайна повинна бути в паку. Спрайт-шити поки не підтримуються.
-
-Розташовуйте частини на спільній сітці, залишаючи місце для рук. Локальні URL визначаються відносно HTML-документа; для HyperFrames використовуйте `assets/...`. Обводка й тінь накладаються на групу одним SVG-фільтром, без обводок на стиках шарів. Кожен екземпляр має окремий filter id. `smile` зарезервовано в маніфесті, автоматичний lip-sync використовує три базові стани рота.
-
-## Аудіо
-
-Потрібен встановлений `ffmpeg`:
-
-```sh
-npm run envelope -- speech.wav speech-envelope.json 30
-```
-
-Скрипт потоково декодує аудіо в mono float32 24 kHz та записує `{ audioFps, audioEnvelope }`. Наявний вихідний файл не перезаписується. Значення RMS лежать у `[0, 1]`, автоматичної нормалізації немає. Пороги рота: `<0.05` закритий, `<0.25` напіввідкритий, решта відкритий. Застосовується причинне середнє трьох семплів; після кінця масиву рот закривається. Для тихого голосу нормалізуйте аудіо перед препроцесингом. Сам компонент аудіо не відтворює: додайте аудіодоріжку HyperFrames із тим самим початком, що й аватар.
-
-## Жести
-
-```js
-import { tagGestures } from './src/index.js';
-const poseKeyframes = tagGestures([
-  { time: 0, text: 'Чому це важливо?' },
-  { time: 2, text: 'Дивись на перше правило' },
-  { time: 5, text: 'Ви можете повторити' },
-  { time: 8, text: 'Готово!', finale: true },
-], Object.keys(pack.layers.poses));
-```
-
-Це простий українсько-англійський мапер, а не семантична LLM-розмітка. Вхід — сегменти/слова з часом у секундах; фінал позначається явно. Таймлайн сортується, для однакових часових міток перемагає остання поза. Поза й емоція діють до наступного ключового кадру.
+MIT. Example artwork in `examples/avatars` and `examples/videos` was generated with AI image tools. The voice recording belongs to the repository author and is included as a demo sample.
